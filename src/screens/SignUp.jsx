@@ -1,20 +1,18 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {
     Row,
     Col,
-    Container,
     Form,
     FormGroup,
     Label,
     Input,
     Button
 } from "reactstrap";
-import NavigationBar from "../components/NavigationBar";
+import {Link} from "react-router-dom";
 const SignUp = (props) => {
 
     return (
-        <Container>
-            <NavigationBar {...this.props.children.props}></NavigationBar>
+        <Fragment>
             <Row className="py-4">
                 <Col>
                     <Form>
@@ -81,10 +79,10 @@ const SignUp = (props) => {
             </Row>
             <Row>
                 <Col>
-                    <p>Already have an account? <a href="/login">Login</a>!</p>
+                    <p>Already have an account? <Link to="/login">Login</Link>!</p>
                 </Col>
             </Row>
-        </Container>
+        </Fragment>
     );
 
 }

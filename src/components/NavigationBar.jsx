@@ -17,13 +17,13 @@ class NavigationBar extends Component {
     static contextType = GlobalContext;
     constructor(props) {
         super(props);
-        this.isOpen = {
+        this.state = {
           collapsed: true,
         };
       }
     
       toggle = () => {
-        this.setState({ isOpen: !this.state.isOpen });
+        this.setState({ collapsed: !this.state.collapsed });
       };
     
      render() {
@@ -31,7 +31,7 @@ class NavigationBar extends Component {
             <Navbar color="dark" dark expand="md">
                 <NavbarBrand onClick={() => this.props.history.push("/")}><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
-                <Collapse isOpen={this.state.isOpen} navbar>
+                <Collapse isOpen={this.state.collapsed} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
                             <NavLink onClick={() => this.props.history.push("/")}>Products</NavLink>
@@ -39,14 +39,15 @@ class NavigationBar extends Component {
                         <NavItem>
                             <NavLink onClick={() => this.props.history.push("about-us")}>About Us</NavLink>
                         </NavItem>
+                        
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         {this.context.isLoggedIn && 
-                        <LoggedInNav></LoggedInNav>
+                        <LoggedInNav history={this.props.history} ></LoggedInNav>
                         
                         }
                         {!this.context.isLoggedIn && 
-                          <LoggedOutNav></LoggedOutNav>
+                          <LoggedOutNav history={this.props.history} ></LoggedOutNav>
                         }
                                               
                        

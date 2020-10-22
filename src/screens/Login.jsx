@@ -1,8 +1,7 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {
     Row,
     Col,
-    Container,
     Form,
     FormGroup,
     Label,
@@ -10,7 +9,6 @@ import {
     
 } from "reactstrap";
 import {Link} from "react-router-dom";
-import NavigationBar from "../components/NavigationBar";
 import GlobalContext from "../GlobalContext";
 
 
@@ -18,8 +16,7 @@ class Login extends Component {
     static contextType = GlobalContext;
     render() {
         return (
-            <Container>
-                <NavigationBar {...this.props.children.props}></NavigationBar>
+            <Fragment>
                 <Row className="py-4">
                     <Col>
                         <Form inline>
@@ -31,16 +28,16 @@ class Login extends Component {
                                 <Label for="examplePassword" className="mr-sm-2">Password</Label>
                                 <Input type="password" name="password" id="examplePassword" placeholder="don't tell!" />
                             </FormGroup>
-                            <Link to="/" onClick={this.context.signIn} class="btn btn-primary">Submit</Link>
+                            <Link to="/" onClick={this.context.signIn} className="btn btn-primary">Submit</Link>
                         </Form>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <p>Don't have an account yet? <a href="/sign-up" >Sign up</a> for a free one!</p>
+                        <p>Don't have an account yet? <Link to="/sign-up" >Sign up</Link> for a free one!</p>
                     </Col>
                 </Row>
-            </Container>
+            </Fragment>
         );
     }
 }

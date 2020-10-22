@@ -1,11 +1,9 @@
-import React from "react";
-import { Row, Col, Container } from "reactstrap";
-import NavigationBar from "../components/NavigationBar";
+import React, {Fragment} from "react";
+import { Row, Col } from "reactstrap";
 const AboutUs = (props) => {
 
     return (
-        <Container>
-            <NavigationBar {...this.props.children.props}></NavigationBar>
+        <Fragment>
             <Row className="py-4">
                 <Col>
                     <p>Bridge Street Market is your brand new neighborhood grocery store focused on bringing fresh, affordable, and local products to Grand Rapids’ vibrant West Side. We are proud to offer low prices every day on thousands of staple items while also creating a space to celebrate local and specialty businesses.
@@ -16,7 +14,7 @@ const AboutUs = (props) => {
 
                 </Col>
             </Row>
-        </Container>
+        </Fragment>
     );
 
 }

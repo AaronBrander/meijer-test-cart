@@ -10,6 +10,10 @@ import GlobalContext from "../GlobalContext";
 class LoggedInNav extends Component {
     static contextType = GlobalContext;
 
+    signout = () => {
+        this.context.signOut();
+        this.props.history.push("/");
+    }
     render() {
         return (
 
@@ -19,10 +23,10 @@ class LoggedInNav extends Component {
                     <NavbarText>Welcome {this.context.profile.firstName}!</NavbarText>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/cart">Cart</NavLink>
+                    <NavLink onClick={() => this.props.history.push("cart")}>Cart</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/" onClick={this.context.signOut}>Sign Out</NavLink>
+                    <NavLink onClick={() => this.signout()}>Sign Out</NavLink>
                 </NavItem>
             </Nav>
 

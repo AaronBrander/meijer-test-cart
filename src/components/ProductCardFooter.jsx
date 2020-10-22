@@ -13,7 +13,7 @@ class ProductList extends Component {
     static contextType = GlobalContext;
 
     render() {
-        console.log("test", this.context.isLoggedIn);
+        
         return (
             <CardFooter>
                 {this.context.isLoggedIn &&

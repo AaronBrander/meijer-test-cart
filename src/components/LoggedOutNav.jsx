@@ -9,14 +9,14 @@ import {
 
 const LoggedOutNav = (props) => {
     return (
-
+        
         <Nav className="ml-auto" navbar>
 
             <NavItem>
                 <NavbarText>Welcome stranger!</NavbarText>
             </NavItem>
             <NavItem>
-                <NavLink href="/login">Sign In</NavLink>
+                <NavLink onClick={() => props.history.push("login")} >Sign In</NavLink>
             </NavItem>
         </Nav>
 

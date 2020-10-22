@@ -30,6 +30,7 @@ class GlobalState extends Component {
   
   signIn = () =>
   {
+    console.log('signin');
     this.setState({ profile: { firstName: "Test", lastName: "User"}, isLoggedIn: true});
   }
 
