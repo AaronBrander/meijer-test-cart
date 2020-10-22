@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import {
     Collapse,
     Navbar,
@@ -7,41 +7,54 @@ import {
     Nav,
     NavItem,
     NavLink,
-    NavbarText,
 } from 'reactstrap';
 import logo from '../bsm.png';
+import GlobalContext from "../GlobalContext";
+import LoggedInNav from "../components/LoggedInNav";
+import LoggedOutNav from "../components/LoggedOutNav";
 
-
-const NavigationBar = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-     const toggle = () => setIsOpen(!isOpen);
+class NavigationBar extends Component {
+    static contextType = GlobalContext;
+    constructor(props) {
+        super(props);
+        this.isOpen = {
+          collapsed: true,
+        };
+      }
     
+      toggle = () => {
+        this.setState({ isOpen: !this.state.isOpen });
+      };
+    
+     render() {
         return (
             <Navbar color="dark" dark expand="md">
-                <NavbarBrand href="/"><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
+                <NavbarBrand onClick={() => this.props.history.push("/")}><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
+                <NavbarToggler onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/">Products</NavLink>
+                            <NavLink onClick={() => this.props.history.push("/")}>Products</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/about-us">About Us</NavLink>
+                            <NavLink onClick={() => this.props.history.push("about-us")}>About Us</NavLink>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavbarText>Welcome {props.profile.firstName}!</NavbarText>
-                        </NavItem>
-                        <NavItem>
-                        <NavLink href="/cart">Cart</NavLink>
-                        </NavItem>
+                        {this.context.isLoggedIn && 
+                        <LoggedInNav></LoggedInNav>
+                        
+                        }
+                        {!this.context.isLoggedIn && 
+                          <LoggedOutNav></LoggedOutNav>
+                        }
+                                              
+                       
                     </Nav>
                 </Collapse>
             </Navbar>
         );
-    
+        }
 }
 
 export default NavigationBar;

@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <GlobalState>
-        <Router baseUrl="/" history={history}>
+        <Router basename="/" history={history}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about-us" component={AboutUs} />

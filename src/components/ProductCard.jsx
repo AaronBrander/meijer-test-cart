@@ -1,17 +1,12 @@
 import React from "react";
 import {
-    Button,
     Card,
     CardText,
     CardBody,
     CardHeader,
     CardImg,
-    CardFooter,
-    Form,
-    FormGroup,
-    Input,
-    Label,
 } from "reactstrap";
+import ProductCardFooter from "../components/ProductCardFooter";
 
 const ProductCard = (props) => {
 
@@ -25,22 +20,8 @@ const ProductCard = (props) => {
                 </CardText>
 
             </CardBody>
-            <CardFooter>
-                <Form inline>
-                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                        <Label for="exampleSelect" className="mr-sm-2">Quantity</Label>
-                        <Input type="select" name="select" id="Quantity">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </Input>
-                    </FormGroup>
-
-                    <Button>Add to Cart</Button>
-                </Form>
-            </CardFooter>
+             <ProductCardFooter product={props.product}></ProductCardFooter>
+            
         </Card>
 
     );

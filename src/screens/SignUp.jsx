@@ -14,7 +14,7 @@ const SignUp = (props) => {
 
     return (
         <Container>
-            <NavigationBar></NavigationBar>
+            <NavigationBar {...this.props.children.props}></NavigationBar>
             <Row className="py-4">
                 <Col>
                     <Form>

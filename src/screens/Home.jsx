@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {
-    Row,
-    Col,
-    Container,
+   Container,
 } from "reactstrap";
 import NavigationBar from "../components/NavigationBar";
 import ProductList from "../components/ProductList";
@@ -19,7 +17,7 @@ class Home extends Component {
     render() {
         return (
             <Container>
-                <NavigationBar profile={this.context.profile}></NavigationBar>
+                <NavigationBar {...this.props.children.props}></NavigationBar>
                 <ProductList products={this.context.products}></ProductList>
 
             </Container>

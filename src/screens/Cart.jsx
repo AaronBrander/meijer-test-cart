@@ -9,7 +9,7 @@ const Cart = (props) => {
 
     return (
         <Container>
-            <NavigationBar></NavigationBar>
+            <NavigationBar {...this.props.children.props}></NavigationBar>
             <ProductCart></ProductCart>
             <ProductCart></ProductCart>
             <ProductCart></ProductCart>
