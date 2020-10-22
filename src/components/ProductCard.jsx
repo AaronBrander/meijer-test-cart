@@ -23,10 +23,7 @@ const ProductCard = (props) => {
             <CardBody>
                 <CardImg top width="100%" src="https://www.meijer.com/content/dam/meijer/product/0000/00/0004/01/0000000004011_2_A1C1_1200.png" alt="Product Name" />
                 <CardText>
-                    <Row>
-                        <Col>$9.50</Col>
-                        <Col>SKU value</Col>
-                    </Row>
+                    $9.50
                 </CardText>
 
             </CardBody>

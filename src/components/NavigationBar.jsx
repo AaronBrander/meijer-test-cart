@@ -32,7 +32,7 @@ const NavigationBar = (props) => {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavbarText>Welcome!</NavbarText>
+                            <NavbarText>Welcome {props.profile.firstName}!</NavbarText>
                         </NavItem>
                         <NavItem>
                         <NavLink href="/cart">Cart</NavLink>
