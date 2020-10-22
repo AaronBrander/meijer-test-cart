@@ -1,7 +1,5 @@
 import React from "react";
 import {
-    Row,
-    Col,
     Button,
     Card,
     CardText,
@@ -19,11 +17,11 @@ const ProductCard = (props) => {
 
     return (
         <Card>
-            <CardHeader>Product Name</CardHeader>
+            <CardHeader><b>{props.product.name}</b></CardHeader>
             <CardBody>
-                <CardImg top width="100%" src="https://www.meijer.com/content/dam/meijer/product/0000/00/0004/01/0000000004011_2_A1C1_1200.png" alt="Product Name" />
+                <CardImg top width="100%" src={props.product.image} alt={props.product.name}/>
                 <CardText>
-                    $9.50
+                    {props.product.price}
                 </CardText>
 
             </CardBody>

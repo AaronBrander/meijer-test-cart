@@ -5,7 +5,7 @@ import {
     Container,
 } from "reactstrap";
 import NavigationBar from "../components/NavigationBar";
-import ProductCard from "../components/ProductCard";
+import ProductList from "../components/ProductList";
 
 import GlobalContext from "../GlobalContext";
 
@@ -20,22 +20,13 @@ class Home extends Component {
         return (
             <Container>
                 <NavigationBar profile={this.context.profile}></NavigationBar>
-                <Row className="py-4">
-                    <Col md className="pb-4">
-                       <ProductCard></ProductCard>
-                    </Col>
-                    <Col md className="pb-4">
-                       <ProductCard></ProductCard>
-                    </Col>
-                    <Col md className="pb-4">
-                       <ProductCard></ProductCard>
-                    </Col>
-                </Row>
+                <ProductList products={this.context.products}></ProductList>
+
             </Container>
         );
-    
+
     }
-    
+
 }
 
 export default Home;

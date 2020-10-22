@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GlobalContext from "./GlobalContext";
+import API from "./API";
 
 class GlobalState extends Component {
   state = {
@@ -9,15 +10,9 @@ class GlobalState extends Component {
   };
 
   getProducts = () => {
-    fetch("https://meijerdigital.azurewebsites.net/api/interview").then(function(response) {
-        response.text().then(function(text) {
-            console.log(text);
-            console.log(this);
-           // this.setState({ products: text });
-          });    
-    
-       
-      });
+    API.get().then((response) => {
+      this.setState({ products: response });
+    });
   };
 
   updateProfile = (profile) => {
