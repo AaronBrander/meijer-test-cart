@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
     Container,
     Row,
     Col,
     Jumbotron,
     Button
 } from 'reactstrap';
-import logo from './bsm.png';
+import NavigationBar from "./components/NavigationBar";
 
 
 class App extends Component {
@@ -33,20 +26,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" expand="md">
-                    <NavbarBrand href="/"><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/components/">Products</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/About Us">About Us</NavLink>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
+                <NavigationBar></NavigationBar>
                 <Jumbotron>
                     <Container>
                         <Row>

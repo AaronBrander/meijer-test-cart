@@ -1,0 +1,38 @@
+import React, { useState } from 'react';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+} from 'reactstrap';
+import logo from '../bsm.png';
+
+
+const NavigationBar = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+     const toggle = () => setIsOpen(!isOpen);
+    
+        return (
+            <Navbar color="dark" dark expand="md">
+                <NavbarBrand href="/"><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink href="/components/">Products</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/About Us">About Us</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+            </Navbar>
+        );
+    
+}
+
+export default NavigationBar;
