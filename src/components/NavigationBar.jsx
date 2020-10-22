@@ -7,6 +7,7 @@ import {
     Nav,
     NavItem,
     NavLink,
+    NavbarText,
 } from 'reactstrap';
 import logo from '../bsm.png';
 
@@ -21,12 +22,20 @@ const NavigationBar = (props) => {
                 <NavbarBrand href="/"><img src={logo} alt="Bridge Street Market" /></NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
+                    <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Products</NavLink>
+                            <NavLink href="/">Products</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/About Us">About Us</NavLink>
+                            <NavLink href="/about-us">About Us</NavLink>
+                        </NavItem>
+                    </Nav>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavbarText>Welcome!</NavbarText>
+                        </NavItem>
+                        <NavItem>
+                        <NavLink href="/cart">Cart</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
