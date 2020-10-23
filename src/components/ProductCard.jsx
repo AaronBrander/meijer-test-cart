@@ -14,6 +14,7 @@ import GlobalContext from "../GlobalContext";
 
 const ProductCard = (props) => {
     const { isLoggedIn } = useContext(GlobalContext);
+    
     return (
         <Card>
             <CardHeader><b>{props.product.name}</b></CardHeader>
