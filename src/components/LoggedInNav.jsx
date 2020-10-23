@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
     Nav,
     NavItem,
@@ -33,5 +34,8 @@ class LoggedInNav extends Component {
         );
     }
 }
-
+LoggedInNav.propTypes = 
+{
+    history: PropTypes.object, 
+}
 export default LoggedInNav;

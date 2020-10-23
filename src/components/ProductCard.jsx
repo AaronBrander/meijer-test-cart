@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import PropTypes from 'prop-types';
 import {
     Card,
     CardText,
@@ -13,7 +14,6 @@ import GlobalContext from "../GlobalContext";
 
 const ProductCard = (props) => {
     const { isLoggedIn } = useContext(GlobalContext);
-    console.log(props);
     return (
         <Card>
             <CardHeader><b>{props.product.name}</b></CardHeader>
@@ -39,6 +39,11 @@ const ProductCard = (props) => {
 
     );
 
+}
+
+ProductCard.propTypes = 
+{
+    product: PropTypes.object, 
 }
 
 export default ProductCard;

@@ -35,7 +35,6 @@ class GlobalState extends Component {
       quantity = 1;
     }
 
-    console.log("updateCart");
     if (quantity === 0) {
       //remove from cart
       const remainingItems = this.state.cart.filter(x => x.code !== product.code);
@@ -50,7 +49,6 @@ class GlobalState extends Component {
 
       //is the item in the cart already?
       let findCartItem = cartItems.find((x) => x.code === product.code);
-      console.log(findCartItem);
       if (findCartItem) {
         findCartItem.quantity += quantity;
         findCartItem.lineTotal =

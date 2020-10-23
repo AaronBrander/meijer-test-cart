@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import PropTypes from 'prop-types';
 import {
     Row,
     Col,
@@ -28,6 +29,11 @@ const ProductList = (props) => {
         </Row >
     );
 
+}
+
+ProductList.propTypes = 
+{
+    products: PropTypes.array, 
 }
 
 export default ProductList;

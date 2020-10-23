@@ -9,13 +9,11 @@ import GlobalContext from "./GlobalContext";
 export const Layout = (props) => {
   const {showAlert, setShowAlert} = useContext(GlobalContext);
   const {alertMessage, setAlertMessage} = useContext(GlobalContext);
-console.log(showAlert, 'alert');
 
   const dismissAlert = () => {
     setShowAlert(false);
     setAlertMessage('');
   }
-
 
   return (
     <Container>

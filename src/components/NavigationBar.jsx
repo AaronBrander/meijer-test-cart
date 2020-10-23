@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
     Collapse,
     Navbar,
@@ -57,5 +58,8 @@ class NavigationBar extends Component {
         );
         }
 }
-
+NavigationBar.propTypes = 
+{
+    history: PropTypes.object, 
+}
 export default NavigationBar;

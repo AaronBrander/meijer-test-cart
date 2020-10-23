@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Nav,
     NavItem,
@@ -21,6 +22,11 @@ const LoggedOutNav = (props) => {
         </Nav>
 
     );
+}
+
+LoggedOutNav.propTypes = 
+{
+    history: PropTypes.object, 
 }
 
 export default LoggedOutNav;

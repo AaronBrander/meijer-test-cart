@@ -20,12 +20,13 @@ const Cart = (props) => {
                         <h2>Your Cart</h2>
                         <Table responsive>
                             <thead>
+                                <tr>
                                 <th>Delete</th>
                                 <th>&nbsp;</th>
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
-
+                                </tr>
                             </thead>
                             <tbody>
                                 {cart.map((item, index) => (

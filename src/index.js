@@ -6,9 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import 'bootswatch/dist/yeti/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
