@@ -1,22 +1,21 @@
-import React, { Component, Fragment } from "react";
+import React, { useContext, Fragment, useEffect } from "react";
 import ProductList from "../components/ProductList";
 
 import GlobalContext from "../GlobalContext";
 
-class Home extends Component {
-    static contextType = GlobalContext;
-    componentDidMount() {
-        this.context.getProducts();
-    }
+export const Home = (props) => {
+    const { products, getProducts } = useContext(GlobalContext);
+    console.log("Home!");
+    
+    useEffect(() => {
+        getProducts();
+    }, [getProducts]);
 
-    render() {
         return (
             <Fragment>
-                <ProductList products={this.context.products}></ProductList>
+                <ProductList products={products}></ProductList>
             </Fragment>
         );
-
-    }
 
 }
 

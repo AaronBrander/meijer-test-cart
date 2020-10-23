@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GlobalContext from "./GlobalContext";
 import API from "./API";
-import { useHistory } from 'react-router-dom';
+
 
 class GlobalState extends Component {
   state = {
@@ -20,8 +20,37 @@ class GlobalState extends Component {
   updateProfile = (profile) => {
     this.setState({ profile: profile });
   };
-  updateCart = (cart) => {
-    this.setState({ cart: cart });
+
+  updateCart = (product, quantity) => {
+    if(quantity === undefined)
+    {
+      quantity = 1;
+    }
+
+    console.log('updateCart');
+    const cartItems = this.state.cart.slice(); //immutability is important!
+
+    //is the item in the cart already?
+    let findCartItem = cartItems.find(x => x.code === product.code);
+    console.log(findCartItem);
+    if(findCartItem)
+    {
+      findCartItem.quantity += quantity;
+      findCartItem.lineTotal = parseFloat(product.price.substring(1)) * quantity;
+    }else
+    {
+      cartItems.push({
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        code: product.code,
+        quantity: quantity,
+        lineTotal: parseFloat(product.price.substring(1)) * quantity,
+      });
+
+    }
+console.log(cartItems);
+  this.setState({ cart: cartItems });
   };
   
   signOut = () => {
@@ -30,8 +59,7 @@ class GlobalState extends Component {
   
   signIn = () =>
   {
-    console.log('signin');
-    this.setState({ profile: { firstName: "Test", lastName: "User"}, isLoggedIn: true});
+     this.setState({ profile: { firstName: "Test", lastName: "User"}, isLoggedIn: true});
   }
 
   render() {

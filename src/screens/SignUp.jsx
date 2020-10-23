@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useContext} from "react";
 import {
     Row,
     Col,
@@ -6,11 +6,12 @@ import {
     FormGroup,
     Label,
     Input,
-    Button
 } from "reactstrap";
 import {Link} from "react-router-dom";
-const SignUp = (props) => {
+import GlobalContext from "../GlobalContext";
 
+const SignUp = (props) => {
+    const { signIn } = useContext(GlobalContext);
     return (
         <Fragment>
             <Row className="py-4">
@@ -73,7 +74,7 @@ const SignUp = (props) => {
                             </Col>
                         </Row>
 
-                        <Button>Sign up</Button>
+                        <Link to="/" onClick={signIn} className="btn btn-primary">Sign Up</Link>
                     </Form>
                 </Col>
             </Row>
