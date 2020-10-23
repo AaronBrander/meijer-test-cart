@@ -7,10 +7,13 @@ import ProductCard from "../components/ProductCard";
 import GlobalContext from "../GlobalContext";
 
 const ProductList = (props) => {
-    const { updateCart } = useContext(GlobalContext);
+    const { updateCart, setShowAlert, setAlertMessage } = useContext(GlobalContext);
+    
     
     const addToCart = (product) => {
-        updateCart(product)
+        updateCart(product);
+        setShowAlert(true);
+        setAlertMessage("A " + product.name + " has been added to your cart.");
     }
 
     return (

@@ -9,6 +9,18 @@ class GlobalState extends Component {
     isLoggedIn: false,
     products: [],
     cart: [],
+    showAlert: false,
+    alertMessage: ''
+  };
+
+  setShowAlert = (isVisible) => 
+  {
+    this.setState({showAlert: isVisible});
+  };
+
+  setAlertMessage = (msg) =>
+  {
+    this.setState({alertMessage: msg});
   };
 
   getProducts = () => {
@@ -49,17 +61,21 @@ class GlobalState extends Component {
       });
 
     }
-console.log(cartItems);
+
   this.setState({ cart: cartItems });
   };
   
   signOut = () => {
     this.setState({ profile: {}, isLoggedIn: false});
+    this.setShowAlert(true);
+     this.setAlertMessage("You've been logged out!");
   }
   
   signIn = () =>
   {
      this.setState({ profile: { firstName: "Test", lastName: "User"}, isLoggedIn: true});
+     this.setShowAlert(true);
+     this.setAlertMessage("Welcome, Test!");
   }
 
   render() {
@@ -70,6 +86,10 @@ console.log(cartItems);
           isLoggedIn: this.state.isLoggedIn,
           products: this.state.products,
           cart: this.state.cart,
+          showAlert: this.state.showAlert,
+          alertMessage: this.state.alertMessage,
+          setAlertMessage: this.setAlertMessage,
+          setShowAlert: this.setShowAlert,
           getProducts: this.getProducts,
           updateProfile: this.updateProfile,
           updateCart: this.updateCart,

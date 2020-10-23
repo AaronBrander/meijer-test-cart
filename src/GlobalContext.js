@@ -5,8 +5,12 @@ export default React.createContext({
   isLoggedIn: false,
   products: [],
   cart: [],
+  showAlert: false,
+  alertMessage: '',
   getProducts: () => {},
   updateCart: () => {},
   signOut: () => {},
   signIn: () => {},
+  setShowAlert: () => {},
+  setAlertMessage: () => {}, 
 });

@@ -5,7 +5,6 @@ import GlobalContext from "../GlobalContext";
 
 export const Home = (props) => {
     const { products, getProducts } = useContext(GlobalContext);
-    console.log("Home!");
     
     useEffect(() => {
         getProducts();
