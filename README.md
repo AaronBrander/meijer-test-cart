@@ -10,4 +10,4 @@ A quick and simple build of a shopping cart.
 * View Cart
 ** Remove from cart
 
-And here's a [https://www.screencast.com/t/lpjE87MW](37 second overview.)
+And here's a 37 second overview: https://www.screencast.com/t/lpjE87MW
