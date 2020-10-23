@@ -8,6 +8,6 @@ A quick and simple build of a shopping cart.
 * Sign in / Sign up pages, though their input doesn't do anything. Just click on the button.
 * Add to cart
 * View Cart
-** Remove from cart
+  * Remove from cart
 
 And here's a 37 second overview: https://www.screencast.com/t/lpjE87MW
